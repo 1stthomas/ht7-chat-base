@@ -1,0 +1,59 @@
+{
+    "name": "ht7/ht7-chat-base",
+    "license": "MIT",
+    "description": "A simple PHP/JavaScript chat",
+    "type": "library",
+    "keywords": ["chat", "websocket"],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "archive": {
+        "exclude": [
+            "/tests", "/build"
+        ]
+    },
+    "authors": [
+        {
+            "name": "1stthomas",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ht7\\ChatBase\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ht7\\ChatBase\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "support": {
+        "source": "https://github.com/1stthomas/ht7-chat-base"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/1stthomas/ht7-base"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "ht7/ht7-base": "dev-master",
+        "cboden/ratchet": "^0.4"
+    },
+    "require-dev": {
+        "wikimedia/less.php": "^v3.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "scripts": {
+        "test": ".\\vendor\\bin\\phpunit --configuration .\\tests\\configuration.xml --colors --testdox",
+        "test-unit": "php .\\vendor\\phpunit\\phpunit\\phpunit --colors --bootstrap .\\tests\\bootstrap.php --configuration .\\tests\\configuration.xml --testsuite \"ht7 kernel - unit\"",
+        "test-func": "php .\\vendor\\phpunit\\phpunit\\phpunit --colors --bootstrap .\\tests\\bootstrap.php --configuration .\\tests\\configuration.xml --testsuite \"ht7 kernel - functional\"",
+        "phpv": "php -v"
+    }
+}

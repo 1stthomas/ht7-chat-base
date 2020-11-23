@@ -1,0 +1,49 @@
+
+.container-output, .container-members {
+    margin-bottom: 20px;
+    .well {
+        height: var(--height-main-row);
+        height: 200px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: var(--paddings-main-elements);
+        .item {
+            background-color: #fff;
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+            .avatar {
+                float: left;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+.container-output > .well {
+    .well {
+        .item {
+            &:after, &:before {
+                content: "";
+                display: table;
+            }
+            &:after {
+                clear: both;
+            }
+            &:not(.user-self) {
+                > div {
+                    float: right;
+                }
+            }
+            > div {
+                float: right;
+                &.user-self {
+                    float: left;
+                }
+            }
+        }
+    }
+}
+.container-members > .well {
+    /*width: 25%;*/
+}

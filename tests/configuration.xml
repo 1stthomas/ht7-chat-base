@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/7.5/phpunit.xsd"
+    backupGlobals="true"
+    backupStaticAttributes="true"
+    bootstrap="./bootstrap.php"
+    cacheResult="false"
+    cacheTokens="true"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    forceCoversAnnotation="false"
+    printerClass="PHPUnit\TextUI\ResultPrinter"
+    processIsolation="false"
+    stopOnError="false"
+    stopOnFailure="false"
+    stopOnIncomplete="false"
+    stopOnSkipped="false"
+    stopOnRisky="false"
+    testSuiteLoaderClass="PHPUnit\Runner\StandardTestSuiteLoader"
+    timeoutForSmallTests="1"
+    timeoutForMediumTests="10"
+    timeoutForLargeTests="60"
+    verbose="true"
+>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../src</directory>
+            <exclude>
+                <directory>../src/Exceptions</directory>
+                <directory>../src/Localization</directory>
+                <directory>../src/Messages</directory>
+                <directory>../src/Registry</directory>
+                <directory>../src/Storage</directory>
+                <directory>../src/Utility/DataSet</directory>
+                <directory>../src/Utility/Interfaces</directory>
+                <directory>../src/Validation/Error</directory>
+                <directory>../src/Validation/Rules</directory>
+                <directory>../src/Validation/Types/Options</directory>
+                <file>../src/ContainerLw.php</file>
+                <file>../src/ContainerLwable.php</file>
+                <file>../src/Enum.php</file>
+                <file>../src/Exceptions/InvalidDatatypeException.php</file>
+                <file>../src/Exceptions/UndefinedConstantException.php</file>
+                <file>../src/Exceptions/UndefinedPropertyException.php</file>
+                <file>../src/Exceptions/Utility/HelperMessages.php</file>
+                <file>../src/Exceptions/Utility/Messages.php</file>
+                <file>../src/Lists/Hashable.php</file>
+                <file>../src/Lists/ItemListable.php</file>
+                <file>../src/Localization/Adapterable.php</file>
+                <file>../src/Localization/Locale.php</file>
+                <file>../src/Localization/Language.php</file>
+                <file>../src/Localization/Translator.php</file>
+                <file>../src/Localization/TranslatorOld.php</file>
+                <file>../src/Localization/Translatorable.php</file>
+                <file>../src/Localization/Adapters/AbstractAdapter.php</file>
+                <file>../src/Localization/Adapters/AdapterList.php</file>
+                <file>../src/Localization/Adapters/Adapterable.php</file>
+                <file>../src/Localization/Adapters/ClassConstantAdapter.php</file>
+                <file>../src/Models/Loadable.php</file>
+                <file>../src/Models/TransLoadable.php</file>
+                <file>../src/Validation/ValidationTypesList.php</file>
+                <file>../src/Validation/Validationable.php</file>
+                <file>../src/Validation/Validator.php</file>
+                <file>../src/Validation/Options/BaseOptionable.php</file>
+                <file>../src/Validation/Options/BaseTypeOptionable.php</file>
+                <file>../src/Validation/Types/MultiValueValidationable.php</file>
+                <file>../src/Validation/Types/SingleValueValidationable.php</file>
+                <file>../src/Validation/Types/ValidationTypable.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="junit" target="..\..\logs\phpunit_ht7-base.xml"/>
+    </logging>
+    <php>
+        <ini name="display_errors" value="1" />
+        <ini name="display_startup_errors" value="1" />
+        <ini name="error_reporting" value="E_ALL|E_STRICT" />
+        <ini name="error_log" value="php_errors.log" />
+    </php>
+    <testsuites>
+        <testsuite name="ht7 base - unit">
+            <directory>./unit/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
